@@ -4,13 +4,48 @@ An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server that l
 
 ## Features
 
+### Execution (3 tools)
+
 | Tool | Description |
 |------|-------------|
 | `evaluate_r_code` | Execute inline R code and return console output |
 | `run_r_file` | Run an `.R` script file |
 | `run_r_test_file` | Run testthat tests and report pass/fail |
-| `create_r_plot` | Execute plotting code and save as PNG |
+
+### Visualization (5 tools)
+
+| Tool | Description |
+|------|-------------|
+| `create_r_plot` | Execute base R plotting code and save as PNG |
+| `create_ggplot` | Create ggplot2 plots with auto-theme and save as PNG |
+| `create_correlation_heatmap` | Generate a correlation heatmap from a data file |
+| `create_multi_plot` | Arrange multiple ggplots into a multi-panel figure |
 | `render_rmarkdown` | Render `.Rmd` files to HTML or PDF |
+
+### Statistical Analysis (5 tools)
+
+| Tool | Description |
+|------|-------------|
+| `fit_linear_model` | Fit lm/glm and return coefficients, R-squared, p-values |
+| `correlation_matrix` | Compute correlation matrix with p-values |
+| `hypothesis_test` | Run t-test, Wilcoxon, chi-squared, Shapiro-Wilk, etc. |
+| `descriptive_stats` | Per-column mean, sd, quartiles, skewness, kurtosis |
+| `pca_analysis` | Principal Component Analysis with loadings and variance |
+
+### Data Wrangling (5 tools)
+
+| Tool | Description |
+|------|-------------|
+| `read_data` | Read CSV, TSV, Excel, JSON, Parquet, or RDS files |
+| `write_data` | Execute R code and save results to CSV/TSV/RDS/JSON |
+| `reshape_data` | Pivot data between wide and long formats (tidyr) |
+| `merge_datasets` | Join two data files (inner, left, right, full) |
+| `generate_sample_data` | Load built-in R datasets (mtcars, iris, etc.) as CSV |
+
+### Analysis & Utilities (4 tools)
+
+| Tool | Description |
+|------|-------------|
 | `check_r_code` | Static analysis via lintr |
 | `get_data_summary` | Load CSV/TSV/RDS and return summary stats |
 | `detect_r_packages` | List all installed R packages |
