@@ -31,7 +31,7 @@ brew install r
 ## Installation
 
 ```bash
-git clone https://github.com/sara/r-mcp.git
+git clone https://github.com/sergiudanstan/r-mcp.git
 cd r-mcp
 pip install -e .
 ```
