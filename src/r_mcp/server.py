@@ -13,6 +13,10 @@ from r_mcp.tools.viz_tools import register_viz_tools
 from r_mcp.tools.stats_tools import register_stats_tools
 from r_mcp.tools.data_tools import register_data_tools
 from r_mcp.tools.ggplot_tools import register_ggplot_tools
+from r_mcp.tools.timeseries_tools import register_timeseries_tools
+from r_mcp.tools.clustering_tools import register_clustering_tools
+from r_mcp.tools.advanced_stats_tools import register_advanced_stats_tools
+from r_mcp.tools.interactive_tools import register_interactive_tools
 
 logger = logging.getLogger(__name__)
 
@@ -36,3 +40,7 @@ register_viz_tools(mcp)
 register_stats_tools(mcp)
 register_data_tools(mcp)
 register_ggplot_tools(mcp)
+register_timeseries_tools(mcp)
+register_clustering_tools(mcp)
+register_advanced_stats_tools(mcp)
+register_interactive_tools(mcp)
