@@ -17,6 +17,9 @@ from r_mcp.tools.timeseries_tools import register_timeseries_tools
 from r_mcp.tools.clustering_tools import register_clustering_tools
 from r_mcp.tools.advanced_stats_tools import register_advanced_stats_tools
 from r_mcp.tools.interactive_tools import register_interactive_tools
+from r_mcp.tools.distribution_tools import register_distribution_tools
+from r_mcp.tools.proportion_tools import register_proportion_tools
+from r_mcp.tools.regression_tools import register_regression_tools
 
 logger = logging.getLogger(__name__)
 
@@ -44,3 +47,6 @@ register_timeseries_tools(mcp)
 register_clustering_tools(mcp)
 register_advanced_stats_tools(mcp)
 register_interactive_tools(mcp)
+register_distribution_tools(mcp)
+register_proportion_tools(mcp)
+register_regression_tools(mcp)

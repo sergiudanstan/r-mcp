@@ -2,7 +2,7 @@
 
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server that lets AI assistants execute R code, create visualizations, analyze data, and manage packages — all through a local Rscript CLI.
 
-## Features
+## Features — 57 Tools
 
 ### Execution (3 tools)
 
@@ -42,7 +42,76 @@ An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server that l
 | `merge_datasets` | Join two data files (inner, left, right, full) |
 | `generate_sample_data` | Load built-in R datasets (mtcars, iris, etc.) as CSV |
 
-### Analysis & Utilities (4 tools)
+### Time Series (4 tools)
+
+| Tool | Description |
+|------|-------------|
+| `forecast_timeseries` | Fit ARIMA/ETS/TBATS/Holt-Winters and forecast with plot |
+| `decompose_timeseries` | Decompose into trend, seasonal, and remainder (STL/classical) |
+| `stationarity_test` | Unit root tests — ADF, KPSS, Phillips-Perron |
+| `acf_pacf_plot` | Plot ACF and PACF side by side with significance bounds |
+
+### Clustering (2 tools)
+
+| Tool | Description |
+|------|-------------|
+| `kmeans_clustering` | K-means with elbow plot, silhouette score, PCA projection |
+| `hierarchical_clustering` | Hierarchical clustering with dendrogram and cophenetic correlation |
+
+### Advanced Statistics (7 tools)
+
+| Tool | Description |
+|------|-------------|
+| `anova_test` | One-way and two-way ANOVA with post-hoc tests |
+| `mixed_effects_model` | Fit linear mixed-effects models (lme4) |
+| `bootstrap_ci` | Bootstrap confidence intervals for any statistic |
+| `normality_tests` | Shapiro-Wilk, Anderson-Darling, Kolmogorov-Smirnov, Lilliefors |
+| `outlier_detection` | Grubbs, Dixon, Rosner, IQR, and Z-score methods |
+| `quantile_regression` | Fit quantile regression at specified quantiles |
+| `survival_analysis` | Kaplan-Meier survival curves and Cox proportional hazards |
+
+### Interactive & Publication Plots (5 tools)
+
+| Tool | Description |
+|------|-------------|
+| `create_plotly` | Create interactive plotly visualizations saved as HTML |
+| `create_publication_plot` | Publication-ready plots using ggpubr |
+| `create_corrplot` | Correlation matrix visualization (corrplot package) |
+| `create_paired_comparison_plot` | Group comparisons with statistical significance |
+| `create_diagnostic_plots` | Regression diagnostic plots (residuals, Q-Q, Cook's distance) |
+
+### Probability Distributions (5 tools)
+
+| Tool | Description |
+|------|-------------|
+| `distribution_calculator` | Compute d/p/q/r for 16 distributions (normal, binomial, t, F, chi-sq, etc.) |
+| `distribution_plot` | Histogram of random samples with theoretical density overlay |
+| `random_sample` | Sample from any population with/without replacement |
+| `qq_plot` | Q-Q plot to assess distributional fit with Shapiro-Wilk test |
+| `simulate_clt` | Central Limit Theorem simulation for any distribution |
+
+### Proportion & Contingency Tests (5 tools)
+
+| Tool | Description |
+|------|-------------|
+| `proportion_test` | One-sample and two-sample proportion tests (prop.test) |
+| `binomial_test` | Exact binomial test for small samples |
+| `chi_squared_test` | Chi-squared test for goodness of fit, independence, homogeneity |
+| `fisher_test` | Fisher's exact test on 2x2 contingency tables |
+| `contingency_table` | Create contingency table with mosaic plot and chi-squared test |
+
+### Regression & Post-hoc (6 tools)
+
+| Tool | Description |
+|------|-------------|
+| `robust_regression` | Robust regression (MASS::rlm/lqs) resistant to outliers |
+| `polynomial_regression` | Fit and compare polynomial models of different degrees |
+| `predict_with_ci` | Predictions with confidence and prediction intervals |
+| `tukey_hsd` | Tukey's HSD post-hoc pairwise comparisons after ANOVA |
+| `kruskal_wallis_test` | Kruskal-Wallis nonparametric test for group differences |
+| `power_analysis` | Compute sample size or power for t-test and proportion test |
+
+### Utilities (5 tools)
 
 | Tool | Description |
 |------|-------------|
@@ -122,6 +191,29 @@ cat("Mean:", mean(x), "\nSD:", sd(x), "\n")
 library(ggplot2)
 df <- data.frame(x = rnorm(200), y = rnorm(200))
 ggplot(df, aes(x, y)) + geom_point(alpha = 0.5) + theme_minimal()
+```
+
+### Probability distributions
+
+```r
+# Via the distribution_calculator tool
+# Compute P(X <= 1.96) for standard normal
+pnorm(1.96, mean=0, sd=1)
+
+# Via the distribution_plot tool
+# Visualize chi-squared(5) distribution with 1000 samples
+```
+
+### Hypothesis testing
+
+```r
+# Via the proportion_test tool
+# Test if 42 out of 100 differs from 50%
+prop.test(42, 100, p = 0.5)
+
+# Via the hypothesis_test tool
+# Two-sample t-test
+t.test(x, y, alternative = "two.sided")
 ```
 
 ### Analyze a CSV
