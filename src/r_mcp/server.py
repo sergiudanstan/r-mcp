@@ -20,6 +20,7 @@ from r_mcp.tools.interactive_tools import register_interactive_tools
 from r_mcp.tools.distribution_tools import register_distribution_tools
 from r_mcp.tools.proportion_tools import register_proportion_tools
 from r_mcp.tools.regression_tools import register_regression_tools
+from r_mcp.tools.eda_tools import register_eda_tools
 
 logger = logging.getLogger(__name__)
 
@@ -50,3 +51,4 @@ register_interactive_tools(mcp)
 register_distribution_tools(mcp)
 register_proportion_tools(mcp)
 register_regression_tools(mcp)
+register_eda_tools(mcp)

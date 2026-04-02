@@ -2,7 +2,7 @@
 
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server that lets AI assistants execute R code, create visualizations, analyze data, and manage packages — all through a local Rscript CLI.
 
-## Features — 57 Tools
+## Features — 62 Tools
 
 ### Execution (3 tools)
 
@@ -110,6 +110,16 @@ An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server that l
 | `tukey_hsd` | Tukey's HSD post-hoc pairwise comparisons after ANOVA |
 | `kruskal_wallis_test` | Kruskal-Wallis nonparametric test for group differences |
 | `power_analysis` | Compute sample size or power for t-test and proportion test |
+
+### Exploratory Data Analysis (5 tools)
+
+| Tool | Description |
+|------|-------------|
+| `pairs_plot` | Scatterplot matrix with correlations and histograms |
+| `density_plot` | Kernel density estimation plot with multiple kernels |
+| `ecdf_plot` | Empirical CDF plot with optional normal overlay |
+| `stem_and_leaf` | Text-based stem-and-leaf display with five-number summary |
+| `variance_test` | F-test, Bartlett's, and Fligner-Killeen variance equality tests |
 
 ### Utilities (5 tools)
 
