@@ -3,10 +3,10 @@
 import json
 import os
 
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
 
-def register_execution_tools(mcp: FastMCP) -> None:
+def register_execution_tools(mcp: MCPServer) -> None:
     """Register execution tools with the MCP server."""
 
     @mcp.tool()

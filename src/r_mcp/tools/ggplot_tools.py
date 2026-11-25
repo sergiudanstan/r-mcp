@@ -2,10 +2,10 @@
 
 import json
 
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
 
-def register_ggplot_tools(mcp: FastMCP) -> None:
+def register_ggplot_tools(mcp: MCPServer) -> None:
     """Register ggplot2-based visualization tools with the MCP server."""
 
     @mcp.tool()

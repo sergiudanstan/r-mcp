@@ -2,10 +2,10 @@
 
 import json
 
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
 
-def register_interactive_tools(mcp: FastMCP) -> None:
+def register_interactive_tools(mcp: MCPServer) -> None:
     """Register interactive and publication visualization tools."""
 
     @mcp.tool()

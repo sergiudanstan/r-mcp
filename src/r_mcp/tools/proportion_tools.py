@@ -2,10 +2,10 @@
 
 import json
 
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
 
-def register_proportion_tools(mcp: FastMCP) -> None:
+def register_proportion_tools(mcp: MCPServer) -> None:
     """Register proportion test and contingency table tools."""
 
     @mcp.tool()
