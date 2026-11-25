@@ -200,23 +200,6 @@ def register_regression_tools(mcp: FastMCP) -> None:
                 f'newdf <- {new_data}\n'
                 f'ci <- predict(model, newdf, interval = "confidence", level = {conf_level})\n'
                 f'pi <- predict(model, newdf, interval = "prediction", level = {conf_level})\n'
-                '# Plot with bands\n'
-                f'resp <- all.vars({formula})[1]\n'
-                f'pred <- all.vars({formula})[2]\n'
-                'xord <- order(df[[pred]])\n'
-                f'ci_all <- predict(model, data.frame({pred[0]}=sort(df[[pred]])),\n'
-                f'    interval = "confidence", level = {conf_level})\n'
-                f'pi_all <- predict(model, data.frame({pred[0]}=sort(df[[pred]])),\n'
-                f'    interval = "prediction", level = {conf_level})\n'
-            )
-            # Simpler approach - avoid variable name issues
-            code = (
-                'library(jsonlite)\n'
-                f'{read_cmd}\n'
-                f'model <- lm({formula}, data = df)\n'
-                f'newdf <- {new_data}\n'
-                f'ci <- predict(model, newdf, interval = "confidence", level = {conf_level})\n'
-                f'pi <- predict(model, newdf, interval = "prediction", level = {conf_level})\n'
                 f'png("{out_path}", width = 900, height = 600, res = 150)\n'
                 f'resp <- all.vars({formula})[1]\n'
                 f'pred_var <- all.vars({formula})[2]\n'
