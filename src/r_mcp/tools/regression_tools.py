@@ -3,10 +3,10 @@
 
 import json
 
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
 
-def register_regression_tools(mcp: FastMCP) -> None:
+def register_regression_tools(mcp: MCPServer) -> None:
     """Register regression and post-hoc tools with the MCP server."""
 
     @mcp.tool()

@@ -3,10 +3,10 @@
 import json
 import os
 
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
 
-def register_viz_tools(mcp: FastMCP) -> None:
+def register_viz_tools(mcp: MCPServer) -> None:
     """Register visualization and utility tools with the MCP server."""
 
     @mcp.tool()

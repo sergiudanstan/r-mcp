@@ -8,7 +8,7 @@ version = "0.2.0"
 description = "MCP server for R — execute code, create visualizations, and analyze data via Rscript CLI"
 requires-python = ">=3.10"
 dependencies = [
-    "mcp>=1.28,<3",
+    "mcp>=2,<3",
 ]
 
 [project.optional-dependencies]

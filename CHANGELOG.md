@@ -6,6 +6,10 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+### Changed
+- Migrated to the MCP Python SDK 2.x: `FastMCP` is now `MCPServer`
+  (`mcp.server.mcpserver`). The dependency is `mcp>=2,<3`; SDK 1.x is no longer supported.
+
 ## [0.2.0] - 2026-11-25
 
 `r-mcp` is an MCP server that lets an AI assistant run R through the local `Rscript` CLI:

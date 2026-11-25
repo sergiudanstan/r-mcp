@@ -2,10 +2,10 @@
 
 import json
 
-from mcp.server.fastmcp import FastMCP, Context
+from mcp.server.mcpserver import MCPServer, Context
 
 
-def register_advanced_stats_tools(mcp: FastMCP) -> None:
+def register_advanced_stats_tools(mcp: MCPServer) -> None:
     """Register advanced statistical analysis tools."""
 
     @mcp.tool()

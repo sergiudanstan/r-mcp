@@ -4,7 +4,7 @@ import logging
 from contextlib import asynccontextmanager
 from collections.abc import AsyncIterator
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 from r_mcp.client import RClient
 from r_mcp.tools.execution_tools import register_execution_tools
@@ -26,7 +26,7 @@ logger = logging.getLogger(__name__)
 
 
 @asynccontextmanager
-async def server_lifespan(server: FastMCP) -> AsyncIterator[dict]:
+async def server_lifespan(server: MCPServer) -> AsyncIterator[dict]:
     client = RClient()
     client.ensure_ready()
     logger.info("R MCP server starting — Rscript: %s", client.binary)
@@ -36,7 +36,7 @@ async def server_lifespan(server: FastMCP) -> AsyncIterator[dict]:
         logger.info("R MCP server stopped")
 
 
-mcp = FastMCP("r", lifespan=server_lifespan)
+mcp = MCPServer("r", lifespan=server_lifespan)
 
 register_execution_tools(mcp)
 register_analysis_tools(mcp)
