@@ -118,7 +118,7 @@ class RClient:
         Prevents path traversal outside workspace.
         """
         path = (self.workspace / filename).resolve()
-        if not str(path).startswith(str(self.workspace.resolve())):
+        if not path.is_relative_to(self.workspace.resolve()):
             raise ValueError(f"Path traversal not allowed: {filename}")
         return path
 

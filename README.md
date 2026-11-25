@@ -1,5 +1,10 @@
 # R MCP Server
 
+[![CI](https://github.com/sergiudanstan/r-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/sergiudanstan/r-mcp/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/sergiudanstan/r-mcp/actions/workflows/codeql.yml/badge.svg)](https://github.com/sergiudanstan/r-mcp/actions/workflows/codeql.yml)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/sergiudanstan/r-mcp/badge)](https://scorecard.dev/viewer/?uri=github.com/sergiudanstan/r-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server that lets AI assistants execute R code, create visualizations, analyze data, and manage packages — all through a local Rscript CLI.
 
 ## Features — 62 Tools
@@ -184,6 +189,8 @@ The server wraps the `Rscript --vanilla` CLI. Each tool call spawns a fresh R se
 - **Timeout**: Default 60s per execution (configurable per call)
 - **Safety**: Path traversal prevention on file outputs; output truncation at 50K chars
 
+> **Warning:** the execution tools run arbitrary R code as your user, with no sandbox. Only connect this server to clients and models you trust; see [SECURITY.md](SECURITY.md).
+
 ## Examples
 
 ### Run R code
@@ -229,6 +236,15 @@ t.test(x, y, alternative = "two.sided")
 ### Analyze a CSV
 
 Use `get_data_summary` with a file path to get dimensions, column types, summary statistics, and a preview.
+
+## Development
+
+```bash
+pip install -e ".[dev]"
+python -m pytest -q tests     # real-R tests need Rscript on PATH
+```
+
+See [CONTRIBUTING.md](CONTRIBUTING.md), [SECURITY.md](SECURITY.md) (read the threat model: this server executes R code chosen by the model) and [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
